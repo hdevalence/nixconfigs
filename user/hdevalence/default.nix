@@ -13,6 +13,7 @@ in {
     BROWSER = "firefox";
     TERMINAL = "alacritty";
     MOZ_ENABLE_WAYLAND = "1";
+    LIBCLANG_PATH = "${pkgs.llvmPackages.libclang}/lib";
   };
 
   # fonts.fontconfig.enable = true;
@@ -36,11 +37,14 @@ in {
       firefox-wayland
       # firefox
       # firefox-devedition-bin
+      tor-browser-bundle-bin
 
       # toolchains
       rustup
       clang
       llvmPackages.bintools
+      llvmPackages.libclang
+
       # rusty unix utils
       unstable.exa
       unstable.tokei
@@ -55,6 +59,9 @@ in {
       gitAndTools.gh
 
       psmisc
+
+      # gnome
+      gnome3.gnome-tweaks
 
       # networking tools
       # nmap-graphical
@@ -220,7 +227,7 @@ in {
         # Font configuration (changes require restart)
         font = {
           # Point size of the font
-          size = 12;
+          size = 11;
           # The normal (roman) font face to use.
           normal = {
             family = "Iosevka";
