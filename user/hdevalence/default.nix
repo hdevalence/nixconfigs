@@ -37,13 +37,21 @@ in {
       firefox-wayland
       # firefox
       # firefox-devedition-bin
-      tor-browser-bundle-bin
+      # tor-browser-bundle-bin
 
       # toolchains
       rustup
       clang
       llvmPackages.bintools
       llvmPackages.libclang
+      stack
+      zlib.dev
+      nodePackages.npm
+      nodePackages.typescript
+      gnumake
+
+      # dev tools
+      meld
 
       # rusty unix utils
       unstable.exa
@@ -51,7 +59,7 @@ in {
       unstable.xsv
       unstable.ripgrep
       unstable.fd
-      unstable.ytop
+      unstable.bottom
       # unstable.broot
       # bat # installed via `programs.bat` 
 
@@ -62,15 +70,17 @@ in {
 
       # gnome
       gnome3.gnome-tweaks
+      glib.dev
 
       # networking tools
       # nmap-graphical
       # mtr-gui
       # slurm
-      # bandwhich
+      bandwhich
       # assorted wiresharks
       # wireshark
       # termshark
+      magic-wormhole
 
       # kubernetes
       # kubectl
@@ -84,6 +94,7 @@ in {
       # ark
       # darktable
       # unstable.inkscape
+      vlc
 
       # stuff
       # neofetch
@@ -136,6 +147,9 @@ in {
       enable = true;
       userName = userData.name;
       userEmail = userData.email;
+      extraConfig = {
+        merge.tool = "meld";
+      };
       aliases = {
         rb = "rebase";
         rbct = "rebase --continue";
